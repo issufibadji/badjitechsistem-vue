@@ -22,8 +22,13 @@
       </div>
     </div>
 
+  <div class="relative mt-12 max-w-5xl mx-auto">
+    <!-- Borda azul inferior destacada -->
+    <div class="absolute left-2 right-2 -bottom-2 h-3 bg-blue-700 rounded-b-xl z-0"></div>
+
+    <!-- Card -->
     <div
-      class="mt-12 bg-blue-100 border border-blue-400 rounded-xl max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-center text-center gap-8 px-6 py-10 shadow-lg"
+      class="relative z-10 bg-blue-100 border border-blue-400 rounded-xl flex flex-col md:flex-row items-center justify-center text-center gap-8 px-6 py-10 shadow-lg"
     >
       <div>
         <h2 class="text-3xl font-bold text-gray-800">+10</h2>
@@ -40,6 +45,9 @@
         <p class="text-blue-700">Anos de experiência</p>
       </div>
     </div>
+  </div>
+
+
   </section>
 </template>
 
