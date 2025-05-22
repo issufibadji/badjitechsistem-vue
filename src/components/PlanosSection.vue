@@ -6,10 +6,19 @@
     </div>
 
     <div class="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 px-6 max-w-7xl mx-auto">
+    <div
+      v-for="(plano, index) in planos"
+      :key="index"
+      class="group relative transition-all duration-300 ease-in-out"
+    >
+      <!-- Sombra azul inferior centralizada -->
       <div
-        v-for="(plano, index) in planos"
-        :key="index"
-        class="border border-blue-400 rounded-xl shadow-lg hover:shadow-2xl transition p-6 max-w-sm mx-auto flex flex-col gap-4"
+        class="absolute bottom-0 left-0 right-0 mx-auto -mb-1 h-2 w-[92%] bg-blue-700 rounded-b-xl z-0 group-hover:mb-0 group-hover:bg-transparent transition-all duration-300 ease-in-out"
+      ></div>
+
+      <!-- Conteúdo padrão do card -->
+      <div
+        class="relative z-10 border border-blue-400 rounded-xl shadow-md hover:shadow-xl transition p-6 max-w-sm mx-auto flex flex-col gap-4 min-h-[440px]"
         :class="{ 'bg-blue-50 border-2': plano.destaque }"
       >
         <h3 class="text-xl font-bold text-blue-700">{{ plano.title }}</h3>
@@ -29,8 +38,11 @@
         </a>
       </div>
     </div>
+
+    </div>
   </section>
 </template>
+
 
 <script setup>
 const planos = [
