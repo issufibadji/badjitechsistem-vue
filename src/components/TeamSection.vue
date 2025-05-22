@@ -38,13 +38,16 @@
 </template>
 
 <script setup>
+import foto1 from '@/assets/images/tem1.png'
+import foto2 from '@/assets/images/tem2.png'
+import foto3 from '@/assets/images/tem3.png'
 const team = [
   {
     name: 'Issufi Badji',
     role: 'CEO',
     description:
       'Com mais de 12 anos de experiência em liderança de equipes de tecnologia, John orienta nossa visão estratégica e garante a excelência dos projetos.',
-    photo: '@/assets/images/tem1.png',
+    photo: foto1,
     cover: 'https://images.unsplash.com/photo-1464823063530-08f10ed1a2dd?auto=format&fit=crop&w=1199&h=799&q=80',
   },
   {
@@ -52,7 +55,7 @@ const team = [
     role: 'CTO',
     description:
       'Arquiteta de software com 10+ anos de atuação, Barbara lidera nosso time de inovação e design de sistemas de alta complexidade.',
-    photo: '@/assets/images/tem2.png',
+        photo: foto2,
     cover: 'https://images.unsplash.com/photo-1464823063530-08f10ed1a2dd?auto=format&fit=crop&w=1199&h=799&q=80',
   },
   {
@@ -60,7 +63,7 @@ const team = [
     role: 'Eng.Software && Developer',
     description:
       'Focada em experiência do usuário, Sammy cria wireframes e protótipos que tornam o uso dos sistemas intuitivo e eficiente.',
-    photo: '@/assets/images/tem3.png',
+    photo: foto3,
     cover: 'https://images.unsplash.com/photo-1464823063530-08f10ed1a2dd?auto=format&fit=crop&w=1199&h=799&q=80',
   },
 ]

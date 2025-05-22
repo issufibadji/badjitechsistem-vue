@@ -25,19 +25,19 @@
 const portfolio = [
   {
     title: 'GooFood',
-    img: '@/assets/images/img/goofood1.png',
+    img: '/src/assets/images/img/goofood1.png',
     description:
       'Plataforma de delivery sob demanda, com painel administrativo para gerenciamento de restaurantes, pedidos em tempo real e integração com gateways de pagamento.',
   },
   {
     title: 'SalonPro',
-    img: '@/assets/images/img/salon.png',
+    img: '/src/assets/images/img/salon.png',
     description:
       'Sistema de agendamento e CRM para salões de beleza, com notificações automáticas e relatórios de desempenho de atendimentos.',
   },
   {
     title: 'DoctorCare',
-    img: '@/assets/images/img/doctorcare.png',
+    img: '/src/assets/images/img/doctorcare.png',
     description:
       'Solução para clínicas e consultórios: agendamento de pacientes, histórico médico e teleconsulta integrada.',
   },
