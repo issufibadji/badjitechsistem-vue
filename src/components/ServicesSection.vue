@@ -7,12 +7,29 @@
       </h1>
     </div>
     <div class="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 px-6 max-w-7xl mx-auto">
-      <div v-for="(service, index) in services" :key="index" class="bg-white p-6 border border-blue-300 rounded-xl shadow-xl hover:shadow-2xl transition">
-        <i :class="service.icon" class="text-4xl text-blue-600 mb-4 block"></i>
-        <h3 class="text-xl font-bold mb-2 text-center">{{ service.title }}</h3>
-        <p class="text-gray-600 text-sm">{{ service.description }}</p>
+      <div
+        v-for="(service, index) in services"
+        :key="index"
+        class="group relative w-full max-w-sm mx-auto transition-all duration-300 ease-in-out"
+      >
+        <!-- Destaque azul inferior -->
+        <div
+          class="absolute bottom-0 left-0 right-0 mx-auto -mb-1 h-3 w-full rounded-b-xl bg-blue-900 transition-all duration-300 ease-linear group-hover:mb-0 group-hover:bg-transparent"
+        ></div>
+
+        <!-- Conteúdo do card -->
+        <div
+          class="relative z-10 min-h-[260px] overflow-hidden rounded-xl border border-blue-900 p-6 bg-blue-50 shadow-md transition-all duration-300 ease-out group-hover:border-transparent hover:scale-105"
+        >
+          <div class="relative z-10 text-center">
+            <i :class="service.icon" class="text-4xl text-blue-600 mb-4 block"></i>
+            <h3 class="text-xl font-bold text-blue-700">{{ service.title }}</h3>
+            <p class="text-gray-600 text-sm">{{ service.description }}</p>
+          </div>
+        </div>
       </div>
     </div>
+
   </section>
 </template>
 
