@@ -6,81 +6,92 @@
     </div>
 
     <div class="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 px-6 max-w-7xl mx-auto">
-    <div
-      v-for="(plano, index) in planos"
-      :key="index"
-      class="group relative transition-all duration-300 ease-in-out"
-    >
-      <!-- Sombra azul inferior centralizada -->
       <div
-        class="absolute bottom-0 left-0 right-0 mx-auto -mb-1 h-2 w-[92%] bg-blue-700 rounded-b-xl z-0 group-hover:mb-0 group-hover:bg-transparent transition-all duration-300 ease-in-out"
-      ></div>
-
-      <!-- Conteúdo padrão do card -->
-      <div
-        class="relative z-10 border border-blue-400 rounded-xl shadow-md hover:shadow-xl transition p-6 max-w-sm mx-auto flex flex-col gap-4 min-h-[440px]"
-        :class="{ 'bg-blue-50 border-2': plano.destaque }"
+        v-for="(plano, index) in planos"
+        :key="index"
+        class="group pricing-wrapper w-full relative rounded-2xl bg-gradient-to-t from-blue-100 to-white p-0.5 shadow-[0_0px_25px_0px_rgba(0,0,0,0.1)] transition-all duration-300 ease-in-out hover:shadow-[0_0px_25px_0px_rgba(0,0,0,0.2)]"
+        :class="{
+          'from-blue-200': plano.destaque,
+          'from-blue-600': plano.title === 'Enterprise'
+        }"
       >
-        <h3 class="text-xl font-bold text-blue-700">{{ plano.title }}</h3>
-        <p class="text-sm text-gray-500">{{ plano.description }}</p>
-        <ul class="text-left text-sm text-gray-700 space-y-1">
-          <li v-for="(item, i) in plano.features" :key="i">
-            <span class="text-blue-600 font-bold">✓</span> {{ item }}
-          </li>
-        </ul>
-        <p class="text-2xl font-bold text-gray-800">{{ plano.price }}</p>
-        <a
-          :href="plano.link"
-          class="mt-auto inline-block px-6 py-2 border border-blue-600 rounded-full font-bold text-blue-600 hover:bg-blue-600 hover:text-white transition"
-          :class="{ 'bg-blue-600 text-white': plano.destaque }"
+        <div
+          class="relative bg-white rounded-2xl p-8 text-center w-full z-0 overflow-hidden hover:-translate-y-1 transition-all duration-300 ease-in-out h-full flex flex-col justify-between"
         >
-          {{ plano.cta }}
-        </a>
+          <div>
+            <h3 class="text-xl font-bold text-gray-800">{{ plano.title }}</h3>
+            <span class="text-xs text-blue-600">{{ plano.description }}</span>
+            <p class="text-3xl my-2 font-extrabold text-blue-700">{{ plano.price }}</p>
+            <ul class="text-sm text-gray-800 mt-4 text-left space-y-1">
+              <li v-for="(item, i) in plano.features" :key="i">
+                <span class="text-blue-600 font-bold">✓</span> {{ item }}
+              </li>
+            </ul>
+          </div>
+          <a
+            :href="plano.link"
+            class="checkout-button flex items-center justify-center bg-blue-700 text-white border-none py-2.5 px-5 text-md rounded-md w-full hover:bg-blue-800 transition-colors duration-300 mt-6"
+          >
+            {{ plano.cta }}
+          </a>
+          <svg
+            v-if="plano.title === 'Básico'"
+            xmlns="http://www.w3.org/2000/svg"
+            class="absolute top-8 left-8 text-[500px] z-[-1] pointer-events-none text-blue-100 transition duration-1000 delay-500 group-hover:-translate-y-8 group-hover:-translate-x-8"
+            width="1em"
+            height="1em"
+            viewBox="0 0 20 20"
+          >
+            <path
+              fill="currentColor"
+              fill-rule="evenodd"
+              d="M6 2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7.414A2 2 0 0 0 15.414 6L12 2.586A2 2 0 0 0 10.586 2zm5 6a1 1 0 1 0-2 0v3.586l-1.293-1.293a1 1 0 1 0-1.414 1.414l3 3a1 1 0 0 0 1.414 0l3-3a1 1 0 0 0-1.414-1.414L11 11.586z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </div>
       </div>
-    </div>
-
     </div>
   </section>
 </template>
-
 
 <script setup>
 const planos = [
   {
     title: 'Básico',
-    description: 'Ideal para protótipos e projetos simples',
+    description: 'get it anywhere',
     features: [
       'Até 16 horas de dedicação',
       'Design & Protótipos',
       'Testes & Deploy (32h)',
     ],
-    price: 'R$ 720,00',
-    cta: 'Contratar',
+    price: 'Free',
+    cta: 'Free Download',
     link: '#contact',
     destaque: false,
   },
   {
     title: 'Profissional',
-    description: 'Para desenvolvimento web completo',
+    description: 'starting at',
     features: [
       '200 horas de desenvolvimento',
       'Suporte Mensal (20h)',
       'Testes & Deploy (32h)',
     ],
     price: 'R$ 12.060,00',
-    cta: 'Contratar',
+    cta: 'Get it!',
     link: '#contact',
     destaque: true,
   },
   {
     title: 'Enterprise',
-    description: 'Projetos sob medida e suporte avançado',
+    description: 'contact us for info',
     features: [
       'Horas ilimitadas',
       'Suporte prioritário',
       'Integrações & Automação',
     ],
-    price: 'Sob consulta',
+    price: '~',
     cta: 'Solicitar Orçamento',
     link: '#contact',
     destaque: false,
